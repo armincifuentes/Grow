@@ -1,0 +1,57 @@
+/*
+--- HOJA DE ESTILOS NAVIDAD VIRGIN ---
+
+    Cliente:    BOWL
+    Autor:      Octano Ltda.
+    Version:    1.0
+    Fecha:      07-12-2012
+    
+    01. CSS Reset
+    02. Estructura general
+
+*/
+
+/**************************** 01. CSS Reset */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent}
+body{line-height:1}ol, ul{list-style:none}blockquote, q{quotes:none}blockquote:before, blockquote:after, q:before, q:after{content:''; content:none}
+article, aside, section, nav, header, hgroup, footer, figure, figcaption {display:block; position:relative;}
+input, textarea {outline: none;}
+
+/**************************** 02. Estructura general */
+
+body, html {color:#505064; font-family:'Open Sans', Arial, sans-serif; font-size:16px; display: block; position:relative; width: 100%; height: 100%; line-height: 1.5em; background: #f5f5ff; font-weight: 300;}
+
+
+a {text-decoration:underline; color:#505064}
+br {clear: both;}
+h1, h2, h3, h4, h5 {font-weight: 700; font-size: 2em; margin-bottom: 1em;}
+h2 {font-size: 1em; margin-bottom: .5em; margin-top: 60px;}
+
+hr {border: none; display: block; background: transparent url(../img/clear.gif); height: 1px; clear: both;position: relative}
+strong {font-family: 'PT Sans'; font-weight: 700;}
+
+.block {position:relative; margin:0 auto; display:block; clear:both; overflow:hidden;}
+.button {padding:.3em 1.2em; -ms-border-radius:3px; border-radius:5px; border:none; cursor: pointer; behavior:url(css/pie.htc); color: #fff; text-shadow: rgba(0,0,0,.5) 0px 1px 1px; text-align: center;}
+.left {float:left; clear:none !important}
+.right {float:right; clear:none !important}
+.notext {font-size: 0; color: transparent;}
+
+article {display: block; margin: 0 auto; width: 640px; margin-top: 100px;}
+p {margin-bottom: 2em; line-height: 2em;}
+p:first-of-type {font-size: 1.3em;}
+
+code {font-size: 10px; background: #e4e4ef; border-radius: 5px; padding: 3px 5px;}
+code.block { padding: 10px; margin-top: -20px !important; margin-bottom: 10px !important; }
+.comment {padding: 20px; border: solid 1px #e4e4ef; border-radius: 5px; height: 150px; margin-bottom: 20px;}
+.comment img {display: block; position: relative; float: left; border: #e4e4ef solid 1px; padding: 1px; margin-right: 20px; border-radius: 5px;}
+.comment h2 {font-size: 1em; font-weight: 300;}
+
+form {font-size: .8em;}
+form label {font-style: italic;}
+form input[type=text],
+form textarea {background: #505064; border-radius: 5px; padding: 5px 8px; border: none; display: block; clear: both; height: 24px; width: 180px;}
+
+dl {font-size: 12px;}
+dt {float: left; margin-right: 20px; position: relative; display: block; width: 150px; text-align: right; font-weight: 700;}
+dd {float: right; width: 400px; display: block; margin-bottom: 20px;}

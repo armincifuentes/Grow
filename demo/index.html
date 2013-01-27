@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<title>Grow Demo</title>
+		
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+	
+	<meta name="title" content="Grow Demo" />
+	<meta name="description" content="Grow is a microtemplating plugin for jQuery" />
+	<meta name="author" content="Armin Cifuentes" />
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	
+	<!-- METADATOS PARA FACEBOOK OPENGRAPH -->
+	<meta property="og:title" content="Grow" />
+	<meta property="og:type" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:site_name" content="Armin Cifuentes" />
+	<meta property="og:description" content="Grow is a microtemplating plugin for jQuery" />
+	<meta property="og:url" content="" />
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<link rel="shortcut icon" href="img/favicon.png" />
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/grow.js"></script>
+	<script type="text/javascript" src="js/init.js"></script>
+
+</head>
+<body>
+
+	<article>
+		<h1>Grow 1.0</h1>
+		<p>Grow is a microtemplating plugin for jQuery, which tries to close a wee-bit the gap between front-end coding and MVC, by separating template files and content.</p>
+		
+		<h2>How it works:</h2>
+		<p>Grow loads a HTML template file and then fills it with contents from a JS Object. The newly generated HTML is then injected into the desired element as many times as required.</p>
+		
+		
+		<h2>First steps</h2>
+		<p>Grow requires jQuery, so be sure to include it in your sites code before proceeding. Then just add the Grow source, and you're good to go!</p>
+		
+		<code class="block">
+			&lt;head&gt;<br />
+			&nbsp;&nbsp;&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&quot;&gt;&lt;/script&gt;<br />
+			&nbsp;&nbsp;&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.grow.js&quot;&gt;&lt;/script&gt;<br />
+			&lt;/head&gt;
+		</code>
+		
+		
+		<h2>Prepare your template files</h2>
+		<p>Grow searches and replaces incidences of your terms for you. We use a very simple syntax to pick these terms out of the HTML and to be shure not to replace anything you don't want replaced. Just use the tag <code>&lt;@fieldname&gt;</code> ("fieldname" being whatever you want to call your field) wherever you want a placeholder. As an example, here is the HTML Template used in this demo:</p>
+		<code class="block">
+			&lt;section class=&quot;comment&quot;&gt;<br />
+			&nbsp;&nbsp;	&lt;img src=&quot;&lt;@photo&gt;&quot; alt=&quot;&lt;@name&gt;&quot; /&gt;<br />
+			&nbsp;&nbsp;	&lt;h2&gt;&lt;a href=&quot;&lt;@uri&gt;&quot; target=&quot;_blank&quot;&gt;&lt;@name&gt;&lt;/a&gt;&lt;/h2&gt;<br />
+				
+			&nbsp;&nbsp;	&lt;p&gt;&lt;@comment&gt;&lt;/p&gt;<br />
+			&lt;/section&gt;
+		</code>
+		
+		<h2>Setup Grow</h2>
+		<p>Grow works on the element you want to be expandable, the one you want to insert the new elements into. In this demo, I setup the comments wrapper with Grow, to put there the new elements.</p>
+		<code class="block">
+			$('aside').grow({<br/>
+			&nbsp;&nbsp;	templateURL: 'templates/comments.html',<br/>
+			&nbsp;&nbsp;	cache: false,<br/>
+			&nbsp;&nbsp;	animation: 'slide',<br/>
+			&nbsp;&nbsp;	speed: 1000<br/>
+			});
+		</code>
+		
+		<h2>Make it grow!</h2>
+		<p>Now everything is ready at last! Now you just got to give Grow the fields and its values coded in a JS Object, and tell it where do you want to insert the new element, whether its at the end or at the beginning of the wrapper.</p>
+		<code class="block">
+			var data = {<br />
+			&nbsp;&nbsp;name: 'John Appleseed',<br />
+			&nbsp;&nbsp;photo: 'http://lorempixel.com/60/60/people',<br />
+			&nbsp;&nbsp;uri: 'http://www.google.com',<br />
+			&nbsp;&nbsp;comment: 'Nice little plugin!'<br />
+			}<br />
+			<br />
+			$('aside').grow('prepend', data);
+		</code>
+		<p>Note how the field names and the template tag names are the same! Grow will then scan your template and replace all of the field names with their respective value, and put the resulting new element into the parent.</p>
+			
+		
+		<h2>Options</h2>
+		<p>For its first version, Grow has a little set of options to help you fit it best for your needs. If you think you have a good idea for a new feature, just say so at the Github project page.</p>
+		
+		<dl class="block">
+			<dt>templateURL</dt>
+			<dd>(String) The relative path to the template file you want to use for each element. Default: ''</dd>
+			
+			<dt>cache</dt>
+			<dd>(Boolean) Whether or not use the cache to load the template. Useful if you have dynamically generated templates. Default: true</dd>
+			
+			<dt>animation</dt>
+			<dd>(String) Which animation use when inserting the new element. Options are 'slide', 'fade' or 'none', which use <code>$.slideDown()</code>, <code>$.fadeIn</code> and nothing, respectively. Default: 'fade'</dd>
+			
+			<dt>speed</dt>
+			<dd>(Integer) Speed in miliseconds at which the animation runs. Default: 300</dd>
+			
+			<dt>afterInsert</dt>
+			<dd>(Function) Callback function to run after the element gets injected. Default: <code>function () {}</code>
+			
+			<dt>beforeInsert</dt>
+			<dd>(Function) Callback function to run before the element gets injected. Default: <code>function () {}</code>
+		</dl>
+		
+		<h2>Methods</h2>
+		<p>There are two methods implemented in grow: <code>'append'</code> and <code>'prepend'</code>. They just tell Grow where to put the new element: at the end or at the beginning, respectively. They both accept a JS Object as a parameter, which should include the data to be used:</p>
+		<code class="block">
+			
+			
+			$('aside').grow('prepend', data); // Insert new element at the beginning of 'aside'<br/>
+			<br/>
+			$('aside').grow('append', data); // Insert new element at the end of 'aside'<br/>
+		</code>
+		
+		<h2>Demo</h2>
+		<p>See a working demo by submitting a comment below:</p>
+		
+		<form id="comment-form" action="">
+			<label for="name">Name:</label>
+			<input type="text" name="name" id="name" placeholder="John Appleseed"/>
+			<hr />
+			<label for="uri">Website:</label>
+			<input type="text" name="uri" id="uri" placeholder="http://mysite.com"/>
+			<hr />
+			<label for="photo">Picture URL:</label>
+			<input type="text" name="photo" id="photo" placeholder="http://lorempixel.com/100/100/people"/>
+			<hr />
+			<label for="comment">Comment:</label>
+			<textarea id="comment" name="comment" placeholder="Write your thought here..."></textarea>
+			<hr />
+			<input type="submit" value="Send" id="send" />
+		</form>
+			
+		<aside>
+		
+			<section class="comment">
+				<img src="http://lorempixel.com/40/40/people" alt="Armin Cifuentes" />
+				<h2><a href="http://armincifuentes.cl" target="_blank">Armin Cifuentes</a></h2>
+				
+				<p>Hey! This is funnnnn!</p>
+			</section>
+		</aside>
+		
+	</article>
+
+</body>
+</html>
