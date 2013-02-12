@@ -1,3 +1,15 @@
+/*
+
+	Grow – A microtemplating plugin for jQuery 1.9
+	Version : 0.7
+	Site	: http://armincifuentes.cl/grow
+	
+	Author	: Armin Cifuentes
+	Company : Octano (http://octano.cl)
+	License : GPLv3 / http://www.gnu.org/licenses/gpl.html
+
+*/	
+	
 (function ($) {
 
 	var methods = {

@@ -1,0 +1,31 @@
+{
+    "name": "grow",
+    "title": "jQuery Grow",
+    "description": "A microtemplating plugin for jQuery.",
+    "keywords": [
+        "templates",
+        "animation",
+        "ajax",
+        "modular",
+        "blocks",
+        "template",
+        "mvc"
+    ],
+    "version": "0.7",
+    "author": {
+        "name": "Armin Cifuentes",
+        "url": "https://armincifuentes.cl"
+    },
+    "licenses": [
+        {
+            "type": "GPLv3",
+            "url": "http://www.gnu.org/licenses/gpl.html"
+        }
+    ],
+    "bugs": "https://github.com/jquery/jquery-color/issues",
+    "homepage": "http://armincifuentes.cl/grow",
+    "docs": "http://armincifuentes.cl/grow",
+    "dependencies": {
+        "jquery": ">=1.9"
+    }
+}
