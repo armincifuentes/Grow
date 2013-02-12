@@ -22,7 +22,7 @@
             "url": "http://www.gnu.org/licenses/gpl.html"
         }
     ],
-    "bugs": "https://github.com/jquery/jquery-color/issues",
+    "bugs": "https://github.com/armincifuentes/Grow/issues",
     "homepage": "http://armincifuentes.cl/grow",
     "docs": "http://armincifuentes.cl/grow",
     "dependencies": {
