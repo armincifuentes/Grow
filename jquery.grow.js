@@ -1,7 +1,7 @@
 /*
 
 	Grow – A microtemplating plugin for jQuery 1.9
-	Version : 0.7
+	Version : 0.7.0
 	Site	: http://armincifuentes.cl/grow
 	
 	Author	: Armin Cifuentes
