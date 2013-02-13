@@ -71,6 +71,10 @@
 						
 						$(element).append(result);
 						
+						if (typeof settings.afterInsert == 'function' ) {
+							settings.afterInsert.call(this);
+						}
+						
 					}
 				});
 				
@@ -114,6 +118,10 @@
 						}
 						
 						$(element).prepend(result);
+						
+						if (typeof settings.afterInsert == 'function' ) {
+							settings.afterInsert.call(this);
+						}
 						
 					}
 				});
